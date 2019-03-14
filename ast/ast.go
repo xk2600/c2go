@@ -266,6 +266,8 @@ func Parse(fullline string) Node {
 		return parseWhileStmt(line)
 	case "NullStmt":
 		return nil
+	case "...": // node in function pointer is variadic...
+                return nil //not sure how to handle yet.
 	default:
 		panic("unknown node type: '" + fullline + "'")
 	}
